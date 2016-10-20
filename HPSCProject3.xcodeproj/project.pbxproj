@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2734A0671DB6ADF200650715 /* test_NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A0661DB6ADF200650715 /* test_NewtonForm.cpp */; };
-		2734A06E1DB6AF6300650715 /* NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A06D1DB6AF6300650715 /* NewtonForm.cpp */; };
+		2734A0711DB8FAB500650715 /* NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A06F1DB8FAB500650715 /* NewtonForm.cpp */; };
+		2734A0721DB8FAB500650715 /* test_NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */; };
+		2734A07C1DB8FC2B00650715 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A0751DB8FC2B00650715 /* Matrix.cpp */; };
+		2734A07D1DB8FC2B00650715 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A07A1DB8FC2B00650715 /* Vector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,8 +27,15 @@
 
 /* Begin PBXFileReference section */
 		2734A0631DB6ADF200650715 /* HPSCProject3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HPSCProject3; sourceTree = BUILT_PRODUCTS_DIR; };
-		2734A0661DB6ADF200650715 /* test_NewtonForm.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test_NewtonForm.cpp; sourceTree = "<group>"; };
-		2734A06D1DB6AF6300650715 /* NewtonForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NewtonForm.cpp; sourceTree = "<group>"; };
+		2734A06F1DB8FAB500650715 /* NewtonForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NewtonForm.cpp; path = src/NewtonForm.cpp; sourceTree = SOURCE_ROOT; };
+		2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test_NewtonForm.cpp; path = src/test_NewtonForm.cpp; sourceTree = SOURCE_ROOT; };
+		2734A0751DB8FC2B00650715 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
+		2734A0761DB8FC2B00650715 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		2734A0771DB8FC2B00650715 /* NotImplementedException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotImplementedException.h; sourceTree = "<group>"; };
+		2734A0781DB8FC2B00650715 /* Serializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serializable.h; sourceTree = "<group>"; };
+		2734A0791DB8FC2B00650715 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		2734A07A1DB8FC2B00650715 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
+		2734A07B1DB8FC2B00650715 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,7 +52,8 @@
 		2734A05A1DB6ADF100650715 = {
 			isa = PBXGroup;
 			children = (
-				2734A0651DB6ADF200650715 /* HPSCProject3 */,
+				2734A0741DB8FC0E00650715 /* lib */,
+				2734A0731DB8FAE200650715 /* src */,
 				2734A0641DB6ADF200650715 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,14 +66,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2734A0651DB6ADF200650715 /* HPSCProject3 */ = {
+		2734A0731DB8FAE200650715 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2734A0661DB6ADF200650715 /* test_NewtonForm.cpp */,
-				2734A06D1DB6AF6300650715 /* NewtonForm.cpp */,
+				2734A06F1DB8FAB500650715 /* NewtonForm.cpp */,
+				2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */,
 			);
-			path = HPSCProject3;
+			path = src;
 			sourceTree = "<group>";
+		};
+		2734A0741DB8FC0E00650715 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				2734A0751DB8FC2B00650715 /* Matrix.cpp */,
+				2734A0761DB8FC2B00650715 /* Matrix.h */,
+				2734A0771DB8FC2B00650715 /* NotImplementedException.h */,
+				2734A0781DB8FC2B00650715 /* Serializable.h */,
+				2734A0791DB8FC2B00650715 /* Types.h */,
+				2734A07A1DB8FC2B00650715 /* Vector.cpp */,
+				2734A07B1DB8FC2B00650715 /* Vector.h */,
+			);
+			path = lib;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -123,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2734A06E1DB6AF6300650715 /* NewtonForm.cpp in Sources */,
-				2734A0671DB6ADF200650715 /* test_NewtonForm.cpp in Sources */,
+				2734A07C1DB8FC2B00650715 /* Matrix.cpp in Sources */,
+				2734A0721DB8FAB500650715 /* test_NewtonForm.cpp in Sources */,
+				2734A07D1DB8FC2B00650715 /* Vector.cpp in Sources */,
+				2734A0711DB8FAB500650715 /* NewtonForm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +279,7 @@
 				2734A06C1DB6ADF200650715 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
