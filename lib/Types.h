@@ -29,7 +29,7 @@
 #include <random>
 
 // singularity tolerance
-#define STOL 1.e-20
+#define STOL 1.e-15
 
 // the precision levels for serializing vs displaying
 // numbers in Matrices and Vectors

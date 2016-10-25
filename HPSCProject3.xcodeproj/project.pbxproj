@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2734A0711DB8FAB500650715 /* NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A06F1DB8FAB500650715 /* NewtonForm.cpp */; };
 		2734A0721DB8FAB500650715 /* test_NewtonForm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */; };
 		2734A07C1DB8FC2B00650715 /* Matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A0751DB8FC2B00650715 /* Matrix.cpp */; };
 		2734A07D1DB8FC2B00650715 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2734A07A1DB8FC2B00650715 /* Vector.cpp */; };
@@ -36,6 +35,7 @@
 		2734A0791DB8FC2B00650715 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		2734A07A1DB8FC2B00650715 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
 		2734A07B1DB8FC2B00650715 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		27BE2E5D1DBFB381002D0DC8 /* println.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = println.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				2734A06F1DB8FAB500650715 /* NewtonForm.cpp */,
+				27BE2E5D1DBFB381002D0DC8 /* println.cpp */,
 				2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */,
 			);
 			path = src;
@@ -150,7 +151,6 @@
 				2734A07C1DB8FC2B00650715 /* Matrix.cpp in Sources */,
 				2734A0721DB8FAB500650715 /* test_NewtonForm.cpp in Sources */,
 				2734A07D1DB8FC2B00650715 /* Vector.cpp in Sources */,
-				2734A0711DB8FAB500650715 /* NewtonForm.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
