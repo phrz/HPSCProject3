@@ -25,7 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2734A0631DB6ADF200650715 /* HPSCProject3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HPSCProject3; sourceTree = BUILT_PRODUCTS_DIR; };
+		2734A0631DB6ADF200650715 /* proj3_a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = proj3_a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2734A06F1DB8FAB500650715 /* NewtonForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NewtonForm.cpp; path = src/NewtonForm.cpp; sourceTree = SOURCE_ROOT; };
 		2734A0701DB8FAB500650715 /* test_NewtonForm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test_NewtonForm.cpp; path = src/test_NewtonForm.cpp; sourceTree = SOURCE_ROOT; };
 		2734A0751DB8FC2B00650715 /* Matrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix.cpp; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 		2734A0641DB6ADF200650715 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2734A0631DB6ADF200650715 /* HPSCProject3 */,
+				2734A0631DB6ADF200650715 /* proj3_a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,9 +93,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2734A0621DB6ADF100650715 /* HPSCProject3 */ = {
+		2734A0621DB6ADF100650715 /* proj3_a */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2734A06A1DB6ADF200650715 /* Build configuration list for PBXNativeTarget "HPSCProject3" */;
+			buildConfigurationList = 2734A06A1DB6ADF200650715 /* Build configuration list for PBXNativeTarget "proj3_a" */;
 			buildPhases = (
 				2734A05F1DB6ADF100650715 /* Sources */,
 				2734A0601DB6ADF100650715 /* Frameworks */,
@@ -105,9 +105,9 @@
 			);
 			dependencies = (
 			);
-			name = HPSCProject3;
+			name = proj3_a;
 			productName = HPSCProject3;
-			productReference = 2734A0631DB6ADF200650715 /* HPSCProject3 */;
+			productReference = 2734A0631DB6ADF200650715 /* proj3_a */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2734A0621DB6ADF100650715 /* HPSCProject3 */,
+				2734A0621DB6ADF100650715 /* proj3_a */,
 			);
 		};
 /* End PBXProject section */
@@ -272,7 +272,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2734A06A1DB6ADF200650715 /* Build configuration list for PBXNativeTarget "HPSCProject3" */ = {
+		2734A06A1DB6ADF200650715 /* Build configuration list for PBXNativeTarget "proj3_a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2734A06B1DB6ADF200650715 /* Debug */,
