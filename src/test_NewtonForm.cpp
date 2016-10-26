@@ -48,13 +48,19 @@ int main(int argc, const char * argv[]) {
 	// 2. Test the polynomial with a linear span [-3,3] of size 201.
 	auto x_tests = Vector::linSpace(-3, 3, 201);
 	auto y_result = Vector(x_tests.size());
+	auto y_true = Vector(x_tests.size());
+	auto y_error = Vector(x_tests.size());
 	
 	for(size_t i = 0; i < x_tests.size(); ++i) {
 		y_result[i] = evaluatePolynomial(p4, x_tests[i]);
+		y_true[i] = f(x_tests[i]);
+		y_error[i] = std::abs(y_true[i] - y_result[i]);
 	}
 	
 	try {
 		y_result.saveTo("../data/newton_y.txt");
+		y_true.saveTo("../data/true_y.txt");
+		y_error.saveTo("../data/newton_error_y.txt");
 	} catch(std::runtime_error e) {
 		println(e.what());
 		return 1;

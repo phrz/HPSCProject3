@@ -22,12 +22,14 @@ using namespace PH;
 //           z     double location to evaluate basis function
 // outputs:  p     value of phi_i(z)
 // 
-double Lagrange_basis(Matrix& x, int i, double z) {
-  double l = 1.0;              // initialize basis function
-  for (size_t j=0; j<x.size(); j++)
-     if (j != i)
-       l *= (z - x(j)) / (x(i) - x(j));
-  return l;
+double Lagrange_basis(Vector& x, size_t i, double z) {
+	double l = 1.0;              // initialize basis function
+	for (size_t j = 0; j < x.size(); j++) {
+		if (j != i) {
+			l *= (z - x[j]) / (x[i] - x[j]);
+		}
+	}
+	return l;
 }
 
 
@@ -42,20 +44,21 @@ double Lagrange_basis(Matrix& x, int i, double z) {
 //           z     double location to evaluate polynomial
 // outputs:  p     value of p(z)
 // 
-double Lagrange(Matrix& x, Matrix& y, double z) {
+double Lagrange(Vector& x, Vector& y, double z) {
 
-  // check input arguments (lengths of x and y)
-  if (x.size() != y.size()) {
-    cerr << "Lagrange error: x and y have different lengths!\n";
-    return 0.0;
-  }
+	// check input arguments (lengths of x and y)
+	if (x.size() != y.size()) {
+		cerr << "Lagrange error: x and y have different lengths!\n";
+		return 0.0;
+	}
 
-  // evaluate p
-  double p = 0.0;                       // initialize result
-  for (size_t i=0; i<x.size(); i++)     // loop over data values
-    p += y(i)*Lagrange_basis(x, i, z);  // update result with next term
-
-  // return final result
-  return p;
+	// evaluate p
+	double p = 0.0;                       // initialize result
+	for (size_t i=0; i < x.size(); i++) {    // loop over data values
+		p += y[i] * Lagrange_basis(x, i, z);  // update result with next term
+	}
+	
+	// return final result
+	return p;
 
 } // end of function
