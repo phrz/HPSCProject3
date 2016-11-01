@@ -14,10 +14,10 @@
 
 using namespace PH;
 
-double Lagrange2D(Vector& x, Vector& y, Matrix& f, double a, double b) {
+double Lagrange2D(const Vector& x, const Vector& y, const Matrix& f, double a, double b) {
 	
 	double sum = 0.0;
-	f.mapElements([&](double& e, size_t i, size_t j) {
+	f.forEach([&](const double& e, size_t i, size_t j) {
 		sum += e * Lagrange_basis(x, i, a) * Lagrange_basis(y, j, b);
 	});
 	

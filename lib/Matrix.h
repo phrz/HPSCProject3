@@ -397,6 +397,18 @@ namespace PH {
 			}
 		}
 		
+		/**
+		 * @brief an immutable version of mapColumns.
+		 *
+		 * @see Matrix::mapColumns
+		 */
+		void forEachColumn(std::function<void(const Raw1DArray&,Index)> callback) const {
+			for(auto it = _data.begin(); it != _data.end(); ++it) {
+				Index i = it - _data.begin();
+				callback(*it, i);
+			}
+		}
+		
 		
 		/**
 		 * @brief iterates over all elements with a lambda function.
@@ -408,6 +420,20 @@ namespace PH {
 		 */
 		void mapElements(std::function<void(MathNumber&,Index,Index)> callback) {
 			mapColumns([&callback](Raw1DArray& columnArray, Index c){
+				for(auto it = columnArray.begin(); it != columnArray.end(); ++it) {
+					Index r = it - columnArray.begin();
+					callback(*it, r, c);
+				}
+			});
+		}
+		
+		/**
+		 * @brief an immutable version of mapElements.
+		 *
+		 * @see Matrix::mapElements
+		 */
+		void forEach(std::function<void(const MathNumber&,Index,Index)> callback) const {
+			forEachColumn([&callback](const Raw1DArray& columnArray, Index c){
 				for(auto it = columnArray.begin(); it != columnArray.end(); ++it) {
 					Index r = it - columnArray.begin();
 					callback(*it, r, c);

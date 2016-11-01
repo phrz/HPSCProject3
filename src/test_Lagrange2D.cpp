@@ -9,7 +9,6 @@
 #include "Matrix.h"
 #include "Lagrange2D.cpp"
 
-using namespace std;
 using namespace PH;
 
 // This routine tests the function lagrange2D.cpp.
@@ -17,51 +16,43 @@ int main(int argc, char* argv[]) {
 
 	// create Lambda function for f(x,y)
 	auto f = [](const double x, const double y) -> double { 
-		return (std::sinh(2.0*x)*cos(3.0*y));
+		return (std::sinh(2.0*x) * std::cos(3.0*y));
 	};
-
 	
-	// first, test with 11 nodes in each direction
+	// set evaluation points (a,b) in a mesh over the domain
+	auto a = Vector::linSpace(-2.0, 2.0, 75);
+	auto b = Vector::linSpace(-2.0, 2.0, 75);
+	
+	// *************************************
+	// TEST ONE - 11 nodes in each direction
+	// *************************************
 	int m = 10;
 	int n = 10;
 	
 	auto x = Vector::linSpace(-2.0, 2.0, m+1);
 	auto y = Vector::linSpace(-2.0, 2.0, n+1);
 	
+	// z - the known points input to the Lagrange function
 	Matrix z(m+1,n+1);
-	
-	for (int j=0; j<=n; j++)  
-		for (int i=0; i<=m; i++)
-			z(i,j) = f(x[i], y[j]);               // fill data
+	z.mapElements([&](double& e, size_t r, size_t c){
+		e = f(x[r], y[c]);
+	});
 
-	// set evaluation points (a,b) in a mesh over the domain
-	auto a = Vector::linSpace(-2.0, 2.0, 75);
-	auto b = Vector::linSpace(-2.0, 2.0, 75);
+	// p - evaluate the polynomial at (a,b)
+	Matrix p10(75,75);
+	p10.mapElements([&](double& e, size_t r, size_t c){
+		e = Lagrange2D(x, y, z, a[r], b[c]);
+	});
 
-	// output evaluation points to disk
-	a.saveTo("../data/a.txt");
-	b.saveTo("../data/b.txt");
-
-	// evaluate the polynomial at the points (a,b), storing in p
-	Matrix p(75,75);
-	for (int j=0; j<75; j++) 
-		for (int i=0; i<75; i++)
-			p(i,j) = Lagrange2D(x, y, z, a[i], b[j]);
-
-	// output p to disk
-	p.saveTo("../data/p10.txt");
-
-	// evaluate the true function at the points (a,b), storing in ftrue
+	// ftrue - evaluate the true function at (r,c)
 	Matrix ftrue(75,75);
-	for (int j=0; j<75; j++) 
-		for (int i=0; i<75; i++)
-			ftrue(i,j) = f(a[i], b[j]);
-
-	// output true function to disk
-	ftrue.saveTo("ftrue.txt");
-
+	ftrue.mapElements([&](double& e, size_t r, size_t c){
+		e = f(a[r], b[c]);
+	});
 	
-	// repeat test with 21 nodes in each direction
+	// *************************************
+	// TEST TWO - 21 nodes in each direction
+	// *************************************
 	m = 20; 
 	n = 20;
 	
@@ -69,18 +60,20 @@ int main(int argc, char* argv[]) {
 	auto y2 = Vector::linSpace(-2.0, 2.0, n+1);
 	
 	Matrix z2(m+1,n+1);
+	z2.mapElements([&](double& e, size_t r, size_t c){
+		e = f(x2[r], y2[c]);
+	});
 	
-	for (int j=0; j<=n; j++)  
-		for (int i=0; i<=m; i++)
-			z2(i,j) = f(x2[i], y2[j]);
-
-	// evaluate the polynomial at the points (a,b), storing back in p
-	for (int j=0; j<75; j++) 
-		for (int i=0; i<75; i++)
-			p(i,j) = Lagrange2D(x2, y2, z2, a[i], b[j]);
-
-	// output p to disk
-	p.saveTo("../data/p20.txt");
+	Matrix p20(75,75);
+	p20.mapElements([&](double& e, size_t r, size_t c){
+		e = Lagrange2D(x2, y2, z2, a[r], b[c]);
+	});
+	
+	a.saveTo("../data/a.txt");
+	b.saveTo("../data/b.txt");
+	ftrue.saveTo("../data/ftrue.txt");
+	p10.saveTo("../data/p10.txt");
+	p20.saveTo("../data/p20.txt");
 
 } // end routine
 

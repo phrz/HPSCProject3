@@ -22,7 +22,7 @@ using namespace PH;
 //           z     double location to evaluate basis function
 // outputs:  p     value of phi_i(z)
 // 
-double Lagrange_basis(Vector& x, size_t i, double z) {
+double Lagrange_basis(const Vector& x, size_t i, double z) {
 	double l = 1.0;              // initialize basis function
 	for (size_t j = 0; j < x.size(); j++) {
 		if (j != i) {
