@@ -6,6 +6,8 @@
 // Inclusions
 #include <iostream>
 #include <cmath>
+#include <string>
+
 #include "Matrix.h"
 #include "Lagrange2D.cpp"
 
@@ -69,11 +71,12 @@ int main(int argc, char* argv[]) {
 		e = Lagrange2D(x2, y2, z2, a[r], b[c]);
 	});
 	
-	a.saveTo("../data/a.txt");
-	b.saveTo("../data/b.txt");
-	ftrue.saveTo("../data/ftrue.txt");
-	p10.saveTo("../data/p10.txt");
-	p20.saveTo("../data/p20.txt");
+	std::string prefix = "../data/b/";
+	a.saveTo(prefix + "a.txt");
+	b.saveTo(prefix + "b.txt");
+	ftrue.saveTo(prefix + "ftrue.txt");
+	p10.saveTo(prefix + "p10.txt");
+	p20.saveTo(prefix + "p20.txt");
 
 } // end routine
 

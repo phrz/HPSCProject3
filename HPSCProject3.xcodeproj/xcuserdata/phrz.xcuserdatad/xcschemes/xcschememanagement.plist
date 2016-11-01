@@ -14,6 +14,16 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>proj3_c.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>proj3_d.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>27BE2E621DBFE43E002D0DC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>27FFC1311DC8F3580058F7E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>27FFC13F1DC8FE100058F7E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

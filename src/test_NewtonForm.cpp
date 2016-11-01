@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
 
 #include "Vector.h"
 #include "NewtonForm.cpp"
@@ -58,9 +59,10 @@ int main(int argc, const char * argv[]) {
 	}
 	
 	try {
-		y_result.saveTo("../data/newton_y.txt");
-		y_true.saveTo("../data/true_y.txt");
-		y_error.saveTo("../data/newton_error_y.txt");
+		std::string prefix = "../data/a/";
+		y_result.saveTo(prefix + "newton_y.txt");
+		y_true.saveTo(prefix + "true_y.txt");
+		y_error.saveTo(prefix + "newton_error_y.txt");
 	} catch(std::runtime_error e) {
 		println(e.what());
 		return 1;
