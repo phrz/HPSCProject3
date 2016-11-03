@@ -66,7 +66,7 @@ $(TARGETD):
 # Data files                   #
 ################################
 
-all_data: data_a data_b data_c
+all_data: data_a data_b data_c data_d
 
 data_a: $(TARGETA)
 	cd $(BIN); ./$(TARGETA)
