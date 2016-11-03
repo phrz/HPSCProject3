@@ -22,7 +22,7 @@ DATA = data/
 NB = notebooks/
 RP = reports/
 
-AFILES = test_NewtonForm.cpp NewtonForm.cpp
+AFILES = test_NewtonForm.cpp
 BFILES = test_Lagrange2D.cpp
 CFILES = runge_uniform.cpp
 DFILES = runge_Chebyshev.cpp
@@ -59,7 +59,7 @@ $(TARGETC):
 	$(CXX) $(CFLAGS) -o $(BIN)$(TARGETC) -I $(LIB) $(addprefix $(LIB), $(LIBFILES)) $(addprefix $(SRC), $(CFILES))
 
 $(TARGETD):
-	$(CXX) $(DFLAGS) -o $(BIN)$(TARGETD) -I $(LIB) $(addprefix $(LIB), $(LIBFILES)) $(addprefix $(SRC), $(DFILES))
+	$(CXX) $(CFLAGS) -o $(BIN)$(TARGETD) -I $(LIB) $(addprefix $(LIB), $(LIBFILES)) $(addprefix $(SRC), $(DFILES))
 
 
 ################################
@@ -69,13 +69,16 @@ $(TARGETD):
 all_data: data_a data_b data_c
 
 data_a: $(TARGETA)
-	cd $(BIN); ./$(TARGETA) > $(ROOT)$(DATA)a_out.txt
+	cd $(BIN); ./$(TARGETA)
 
 data_b: $(TARGETB)
-	cd $(BIN); ./$(TARGETB) > $(ROOT)$(DATA)b_out.txt
+	cd $(BIN); ./$(TARGETB)
 
 data_c: $(TARGETC)
 	cd $(BIN); ./$(TARGETC)
+
+data_d: $(TARGETD)
+	cd $(BIN); ./$(TARGETD)
 
 
 

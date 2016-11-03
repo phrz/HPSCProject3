@@ -39,7 +39,5 @@ void interpolateOverMatrix(int m, int n, const Vector& a, const Vector& b,
 		e = Lagrange2D(x, y, F, a[i], b[j]);
 	});
 	
-	println(a.size() * b.size());
-	println(P.size());
 	P.saveTo(filename);
 }

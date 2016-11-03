@@ -6,7 +6,7 @@
 //  Copyright © 2016 Paul Herz. All rights reserved.
 //
 
-#define _PH_VERBOSE false
+#define _PH_VERBOSE true
 
 #include <iostream>
 #include <cmath>
@@ -24,6 +24,7 @@ double evaluatePolynomial(const Vector& a, double x) {
 	for(size_t i = n-1; i < n; --i) {
 		result = std::fma(result, x, a[i]); // (result * x) + a_i
 	}
+	
 	return result;
 }
 
@@ -53,7 +54,8 @@ int main(int argc, const char * argv[]) {
 	auto y_error = Vector(x_tests.size());
 	
 	for(size_t i = 0; i < x_tests.size(); ++i) {
-		y_result[i] = evaluatePolynomial(p4, x_tests[i]);
+		//y_result[i] = evaluatePolynomial(p4, x_tests[i]);
+		y_result[i] = Newton_nestedform(p4, xnodes, x_tests[i]);
 		y_true[i] = f(x_tests[i]);
 		y_error[i] = std::abs(y_true[i] - y_result[i]);
 	}
