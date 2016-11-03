@@ -71,6 +71,7 @@
 		2734A0791DB8FC2B00650715 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		2734A07A1DB8FC2B00650715 /* Vector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector.cpp; sourceTree = "<group>"; };
 		2734A07B1DB8FC2B00650715 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		276192251DCAC72E0052E0E0 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = SOURCE_ROOT; };
 		27BE2E5D1DBFB381002D0DC8 /* println.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = println.cpp; sourceTree = "<group>"; };
 		27BE2E631DBFE43E002D0DC8 /* proj3_b */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = proj3_b; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BE2E6A1DBFE4EA002D0DC8 /* Lagrange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lagrange.cpp; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		2734A05A1DB6ADF100650715 = {
 			isa = PBXGroup;
 			children = (
+				276192251DCAC72E0052E0E0 /* Makefile */,
 				2734A0741DB8FC0E00650715 /* lib */,
 				2734A0731DB8FAE200650715 /* src */,
 				2734A0641DB6ADF200650715 /* Products */,
@@ -521,6 +523,7 @@
 				27FFC1381DC8F3580058F7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27FFC1441DC8FE100058F7E8 /* Build configuration list for PBXNativeTarget "proj3_d" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +532,7 @@
 				27FFC1461DC8FE100058F7E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
