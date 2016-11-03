@@ -89,10 +89,10 @@ data_d: $(TARGETD)
 all_reports: $(REPORTAB) $(REPORTCD)
 
 $(REPORTAB): all_data $(NOTEBOOKAB)
-	jupyter nbconvert --to pdf --execute $(NOTEBOOKAB) --output-dir $(ROOT)$(RP)
+	jupyter nbconvert --to pdf --execute $(NOTEBOOKAB) --output-dir $(ROOT)$(RP) --PDFExporter.latex_command="['xelatex','{filename}']"
 
 $(REPORTCD): all_data $(NOTEBOOKCD)
-	jupyter nbconvert --to pdf --execute $(NOTEBOOKCD) --output-dir $(ROOT)$(RP)
+jupyter nbconvert --to pdf --execute $(NOTEBOOKCD) --output-dir $(ROOT)$(RP) --PDFExporter.latex_command="['xelatex','{filename}']"
 
 ################################
 # Miscellaneous                #
